@@ -47,7 +47,7 @@
     // });
           // AJAX with JQuery
           $.ajax({
-            url: "http://localhost:8080/Stumgmt2024/student",
+            url: "http://localhost:8080/StudentManagemant2024_war/student",
             type: "POST",
             data: studentJSON,
             headers: { "Content-Type": "application/json" },
