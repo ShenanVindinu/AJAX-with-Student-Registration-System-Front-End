@@ -28,7 +28,7 @@ $(document).ready(function () {
         console.log(studentJSON)
         // save the data with AJAX
         const XMLReq = new XMLHttpRequest();
-        http.onreadystatechange = () => {
+        XMLReq.onreadystatechange = () => {
             if (XMLReq.readyState == 4) {
                 if (XMLReq.status == 200 || XMLReq.status == 201) {
                     var jsonTypeResponse = JSON.stringify(XMLReq.responseText)
