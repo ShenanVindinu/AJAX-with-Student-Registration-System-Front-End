@@ -27,23 +27,23 @@ $(document).ready(function () {
         const studentJSON = JSON.stringify(studentData)
         console.log(studentJSON)
         // save the data with AJAX
-        const http = new XMLHttpRequest();
+        const XMLReq = new XMLHttpRequest();
         http.onreadystatechange = () => {
-            if (http.readyState == 4) {
-                if (http.status == 200 || http.status == 201) {
-                    var jsonTypeResponse = JSON.stringify(http.responseText)
+            if (XMLReq.readyState == 4) {
+                if (XMLReq.status == 200 || XMLReq.status == 201) {
+                    var jsonTypeResponse = JSON.stringify(XMLReq.responseText)
                     console.log(jsonTypeResponse)
                 } else {
-                    console.error("Error:", http.status, http.statusText)
+                    console.error("Error:", XMLReq.status, XMLReq.statusText)
                 }
 
             } else {
-                console.log("Processing stage: Stage=", http.readyState);
+                console.log("Processing stage: Stage=", XMLReq.readyState);
             }
         }
-        http.open("POST", "http://localhost:8080/Stumgmt2024/student", true)
-        http.setRequestHeader("Content-Type", "application/json")
-        http.send(studentJSON)
+        XMLReq.open("POST", "http://localhost:8080/Stumgmt2024/student", true)
+        XMLReq.setRequestHeader("Content-Type", "application/json")
+        XMLReq.send(studentJSON)
     });
         // AJAX with JQuery
         // $.ajax({
