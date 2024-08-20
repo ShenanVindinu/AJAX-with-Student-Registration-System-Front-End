@@ -23,7 +23,7 @@ $(document).ready(function () {
 
         console.log(studentData)
 
-        //create JOSN
+        //create JSON
         const studentJSON = JSON.stringify(studentData)
         console.log(studentJSON)
         // save the data with AJAX
