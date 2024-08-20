@@ -27,37 +27,37 @@ $(document).ready(function () {
         const studentJSON = JSON.stringify(studentData)
         console.log(studentJSON)
         // save the data with AJAX
-        //     const http = new XMLHttpRequest();
-        //     http.onreadystatechange = ()=>{
-        //         if(http.readyState == 4){
-        //             if(http.status == 200 || http.status == 201){
-        //                 var jsonTypeResponse =  JSON.stringify(http.responseText)
-        //                 console.log(jsonTypeResponse)
-        //             }else{
-        //                 console.error("Error:", http.status, http.statusText)
-        //             }
+        const http = new XMLHttpRequest();
+        http.onreadystatechange = () => {
+            if (http.readyState == 4) {
+                if (http.status == 200 || http.status == 201) {
+                    var jsonTypeResponse = JSON.stringify(http.responseText)
+                    console.log(jsonTypeResponse)
+                } else {
+                    console.error("Error:", http.status, http.statusText)
+                }
 
-        //         }else{
-        //             console.log("Processing stage: Stage=", http.readyState);
-        //         }
-        //     }
-        //     http.open("POST","http://localhost:8080/Stumgmt2024/student",true)
-        //     http.setRequestHeader("Content-Type","application/json")
-        //     http.send(studentJSON)
-        // });
-        // AJAX with JQuery
-        $.ajax({
-            url: "http://localhost:8080/StudentManagemant2024_war/student",
-            type: "POST",
-            data: studentJSON,
-            headers: {"Content-Type": "application/json"},
-            success: (res) => {
-                console.log(JSON.stringify(res));
-            },
-            error: (res) => {
-                console.error(res);
+            } else {
+                console.log("Processing stage: Stage=", http.readyState);
             }
-        });
+        }
+        http.open("POST", "http://localhost:8080/Stumgmt2024/student", true)
+        http.setRequestHeader("Content-Type", "application/json")
+        http.send(studentJSON)
     });
+        // AJAX with JQuery
+        // $.ajax({
+        //     url: "http://localhost:8080/StudentManagemant2024_war/student",
+        //     type: "POST",
+        //     data: studentJSON,
+        //     headers: {"Content-Type": "application/json"},
+        //     success: (res) => {
+        //         console.log(JSON.stringify(res));
+        //     },
+        //     error: (res) => {
+        //         console.error(res);
+        //     }
+        // });
+    // });
 
 });
